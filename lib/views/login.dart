@@ -37,23 +37,19 @@ class _loginScreenState extends State<loginScreen> {
           children: [
             Text(
               "Login",
-              style: TextStyle(
-                  fontSize: 23,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.grey.shade500),
+              style:
+                  TextStyle(fontSize: 23, fontWeight: FontWeight.w500, color: Colors.grey.shade500),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16)),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
                 child: TextField(
                   controller: username,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(borderSide: BorderSide.none),
                     hintText: "Enter Username",
-                    hintStyle:
-                        TextStyle(color: Colors.grey.shade400, fontSize: 14),
+                    hintStyle: TextStyle(color: Colors.grey.shade400, fontSize: 14),
                     suffixIcon: Icon(Icons.people),
                   ),
                 ),
@@ -62,16 +58,14 @@ class _loginScreenState extends State<loginScreen> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16)),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
                 child: TextField(
                   controller: password,
                   obscureText: showPassword,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(borderSide: BorderSide.none),
                     hintText: "Enter Password",
-                    hintStyle:
-                        TextStyle(color: Colors.grey.shade400, fontSize: 14),
+                    hintStyle: TextStyle(color: Colors.grey.shade400, fontSize: 14),
                     suffixIcon: IconButton(
                       icon: Icon(Icons.password),
                       onPressed: () => {
@@ -90,24 +84,42 @@ class _loginScreenState extends State<loginScreen> {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.065,
               width: MediaQuery.of(context).size.width * 0.94,
-              child: TextButton(
-                  style: TextButton.styleFrom(
-                      backgroundColor: Colors.black,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(16))),
-                  onPressed: () async {
-                    loading();
-                    LoginModel loginMo;
+              child: Row(
+                children: [
+                  TextButton(
+                      style: TextButton.styleFrom(
+                          backgroundColor: Colors.black,
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16))),
+                      onPressed: () async {
+                        loading();
+                        LoginModel loginMo;
 
-                    loginMo = await loginController()
-                        .login(username.text, password.text);
-                    savedlogin(loginMo);
-                    Navigator.of(context).pop();
-                  },
-                  child: Text(
-                    "Login",
-                    style: TextStyle(color: Colors.white, fontSize: 18),
-                  )),
+                        loginMo = await loginController().login(username.text, password.text);
+                        savedlogin(loginMo);
+                        Navigator.of(context).pop();
+                      },
+                      child: Text(
+                        "login",
+                        style: TextStyle(color: Colors.white, fontSize: 18),
+                      )),
+                  TextButton(
+                      style: TextButton.styleFrom(
+                          backgroundColor: Colors.black,
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16))),
+                      onPressed: () async {
+                        //loading();
+                        //LoginModel loginMo;
+
+                        //loginMo = await loginController().login(username.text, password.text);
+                        //savedlogin(loginMo);
+                        Navigator.pushNamed(context, '/register');
+                      },
+                      child: Text(
+                        "Register",
+                        style: TextStyle(color: Colors.white, fontSize: 18),
+                      )),
+                ],
+              ),
             ),
           ],
         ),

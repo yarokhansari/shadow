@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shadow/views/login.dart';
+import 'package:shadow/views/register.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,6 +13,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      initialRoute: '/',
+      routes: {
+        '/register': (context) => const register(),
+      },
       title: 'Shadow',
       theme: ThemeData(
         primarySwatch: Colors.blue,
