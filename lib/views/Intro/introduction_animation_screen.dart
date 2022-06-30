@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shadow/Global/Settings/colors.dart';
 import 'components/great_offers.dart';
 import 'components/center_next_button.dart';
-import 'components/mood_diary_vew.dart';
+import 'components/support.dart';
 import 'components/marketplace.dart';
 import 'components/splashview.dart';
 import 'components/top_back_skip_view.dart';
@@ -20,11 +20,10 @@ class _IntroductionAnimationScreenState extends State<IntroductionAnimationScree
   AnimationController? _animationController;
   var chcolr = false;
 
-
   @override
   void initState() {
     _animationController = AnimationController(vsync: this, duration: Duration(seconds: 8));
-    
+
     _animationController?.animateTo(0.0);
     super.initState();
   }
@@ -39,12 +38,11 @@ class _IntroductionAnimationScreenState extends State<IntroductionAnimationScree
   Widget build(BuildContext context) {
     print(_animationController?.value);
     return Scaffold(
-      backgroundColor: introc,
+      backgroundColor: Colors.white,
       body: ClipRect(
         child: Stack(
           children: [
             SplashView(
-              
               animationController: _animationController!,
             ),
             RelaxView(

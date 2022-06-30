@@ -51,7 +51,7 @@ class WelcomeView extends StatelessWidget {
       child: SlideTransition(
         position: _secondHalfAnimation,
         child: Padding(
-          padding: const EdgeInsets.only(bottom: 100),
+          padding: const EdgeInsets.only(bottom: 150),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:shadow/views/Home/HomeScreen.dart';
-import 'package:shadow/views/login.dart';
+import 'package:shadow/Views/Home/HomeScreen.dart';
 import 'package:shadow/views/register.dart';
-
 import 'Global/Settings/template.dart';
 import 'Views/Intro/introduction_animation_screen.dart';
 
 void main() {
   runApp(const MyApp());
 }
+
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -24,7 +23,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Shadow',
       theme: theme,
-      home: IntroductionAnimationScreen(),
+      home: HomeScreen(),
     );
   }
 }

@@ -24,65 +24,71 @@ class _SplashViewState extends State<SplashView> {
     ));
     return SlideTransition(
       position: _introductionanimation,
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            SizedBox(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height * 0.4,
-              child: Image.asset(
-                'assets/introduction_animation/intro.jpg',
-                fit: BoxFit.cover,
+      child: Container(
+        color: Colors.black,
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height * 0.7,
+                child: Image.asset(
+                  'assets/introduction_animation/Shadow.png',
+                  fit: BoxFit.cover,
+                ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: 8.0, bottom: 8.0),
-              child: Text(
-                "Shadow",
-                style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold, color: Colors.white),
+              // Padding(
+              //   padding: EdgeInsets.only(top: 8.0, bottom: 8.0),
+              //   child: Text(
+              //     "Shadow",
+              //     style:
+              //         TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold, color: Colors.white),
+              //   ),
+              // ),
+              Padding(
+                padding: EdgeInsets.only(left: 64, right: 64),
+                child: Text(
+                  "Shadow Ecommerce is one stop shop for all your shopping items",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(left: 64, right: 64),
-              child: Text(
-                "Shadow Ecommerce is one stop shop for all your shopping items",
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white),
+              SizedBox(
+                height: 48,
               ),
-            ),
-            SizedBox(
-              height: 48,
-            ),
-            Padding(
-              padding: EdgeInsets.only(bottom: MediaQuery.of(context).padding.bottom + 16),
-              child: InkWell(
-                onTap: () {
-                  widget.animationController.animateTo(0.2);
-                  introc = introc1;
-                },
-                child: Container(
-                  height: 58,
-                  padding: EdgeInsets.only(
-                    left: 56.0,
-                    right: 56.0,
-                    top: 16,
-                    bottom: 16,
-                  ),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(38.0),
-                    color: Color(0xff132137),
-                  ),
-                  child: Text(
-                    "Let's begin",
-                    style: TextStyle(
-                      fontSize: 18,
+              Padding(
+                padding: EdgeInsets.only(bottom: MediaQuery.of(context).padding.bottom + 16),
+                child: InkWell(
+                  onTap: () {
+                    widget.animationController.animateTo(0.2);
+                  },
+                  child: Container(
+                    height: 58,
+                    padding: EdgeInsets.only(
+                      left: 56.0,
+                      right: 56.0,
+                      top: 16,
+                      bottom: 16,
+                    ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(38.0),
                       color: Colors.white,
+                    ),
+                    child: Text(
+                      "Let's begin",
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

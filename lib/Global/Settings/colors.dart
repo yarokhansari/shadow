@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 
-var introc = Colors.black;
-var introc1 = Colors.white;
-
 Map<int, Color> colorCodes = const {
   50: Color(0xffeef7f1),
   100: Color(0xffddefe3),
