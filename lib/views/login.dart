@@ -7,7 +7,7 @@ import 'package:shadow/saved/savedlogin.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class loginScreen extends StatefulWidget {
-  const loginScreen({Key? key}) : super(key: key);
+  loginScreen({Key? key}) : super(key: key);
 
   @override
   State<loginScreen> createState() => _loginScreenState();
@@ -107,11 +107,6 @@ class _loginScreenState extends State<loginScreen> {
                           backgroundColor: Colors.black,
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16))),
                       onPressed: () async {
-                        //loading();
-                        //LoginModel loginMo;
-
-                        //loginMo = await loginController().login(username.text, password.text);
-                        //savedlogin(loginMo);
                         Navigator.pushNamed(context, '/register');
                       },
                       child: Text(

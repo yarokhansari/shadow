@@ -13,3 +13,4 @@ void savedlogin(LoginModel LoginMo) async {
   prefs.setString('dob', LoginMo.data!.dateOfBirth ?? "");
   prefs.setString('status', LoginMo.data!.status ?? "");
 }
+

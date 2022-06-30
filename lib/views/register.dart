@@ -1,10 +1,11 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:shadow/controllers/registercontroller.dart';
 
 class register extends StatefulWidget {
   const register({Key? key}) : super(key: key);
+
+  static String rName= '/register';
 
   @override
   State<register> createState() => _registerState();

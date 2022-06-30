@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:shadow/views/Home/HomeScreen.dart';
 import 'package:shadow/views/login.dart';
 import 'package:shadow/views/register.dart';
+
+import 'Global/Settings/template.dart';
+import 'Views/Intro/introduction_animation_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,13 +19,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       initialRoute: '/',
       routes: {
-        '/register': (context) => const register(),
+        register.rName: (context) => const register(),
       },
+      debugShowCheckedModeBanner: false,
       title: 'Shadow',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: loginScreen(),
+      theme: theme,
+      home: IntroductionAnimationScreen(),
     );
   }
 }

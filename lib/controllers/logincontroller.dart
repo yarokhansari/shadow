@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'dart:developer';
 import 'package:http/http.dart' as http;
+import 'package:shadow/Global/Properties/config.dart';
 import '../models/loginmodel.dart';
-import '../properties/config.dart';
 
 class loginController {
   login(String username, String password) async {

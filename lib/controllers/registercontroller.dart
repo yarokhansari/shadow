@@ -1,7 +1,8 @@
 import 'dart:convert';
 import 'dart:developer';
 import 'package:http/http.dart' as http;
-import '../properties/config.dart';
+import 'package:shadow/Global/Properties/config.dart';
+
 
 class registerController {
   register(
