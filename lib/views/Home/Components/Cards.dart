@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:shadow/Global/Properties/config.dart';
 import 'package:shadow/models/demo_products.dart';
-import 'package:shadow/views/details/details_screen.dart';
-
+import 'package:shadow/views/Details/details_screen.dart';
 import 'Product_cards.dart';
 import 'Title.dart';
 
 class NewArrivalProducts extends StatelessWidget {
-  const NewArrivalProducts({
+  String tlt;
+  NewArrivalProducts({
     Key? key,
+    required this.tlt,
   }) : super(key: key);
 
   @override
@@ -18,13 +19,12 @@ class NewArrivalProducts extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(vertical: defaultPadding),
           child: SectionTitle(
-            title: "New Arrival",
+            title: tlt,
             pressSeeAll: () {},
           ),
         ),
         SingleChildScrollView(
-          physics: const BouncingScrollPhysics(
-              parent: AlwaysScrollableScrollPhysics()),
+          physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
           scrollDirection: Axis.horizontal,
           child: Row(
             children: List.generate(
@@ -40,8 +40,7 @@ class NewArrivalProducts extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) =>
-                              DetailsScreen(product: demo_product[index]),
+                          builder: (context) => DetailsScreen(product: demo_product[index]),
                         ));
                   },
                 ),

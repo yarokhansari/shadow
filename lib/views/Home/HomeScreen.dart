@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:shadow/Global/Loading.dart';
 import 'package:shadow/controllers/homec.dart';
 import 'package:shadow/views/Home/Components/Cards.dart';
+import 'package:shadow/views/Home/Components/coupons.dart';
 import '../../Global/AppBar.dart';
 import '../../Global/SizeWala.dart';
 import '../../models/homem.dart';
@@ -42,21 +43,28 @@ class _HomeScreenState extends State<HomeScreen> {
         widgets: <Widget>[Icon(Icons.more_vert)],
       ),
       body: Center(
-        child: Column(
-          children: [
-            Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
-                child: data == null
-                    ? Center(child: loadingWidget())
-                    : HomeBanner(
-                        images: data!.banners!,
-                        height: pageSize[sizer.screenHeight.index] * 0.2,
-                        width: pageSize[sizer.screenWidth.index] * 0.95)),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              child: NewArrivalProducts(),
-            )
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: data == null
+                      ? Center(child: loadingWidget())
+                      : HomeBanner(images: data!.banners!, height: pageSize[sizer.screenHeight.index] * 0.2, width: pageSize[sizer.screenWidth.index] * 0.95)),
+              data != null && data!.coupons != null
+                  ? CouponsScreen(offers: data!.coupons!, height: pageSize[sizer.screenHeight.index] * 0.08, width: pageSize[sizer.screenWidth.index] * 0.95)
+                  : SizedBox(),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                child: NewArrivalProducts(tlt: "New Arrival"),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                child: NewArrivalProducts(tlt: "Featured Products"),
+              )
+            ],
+          ),
         ),
       ),
     );

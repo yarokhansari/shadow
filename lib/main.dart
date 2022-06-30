@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shadow/Views/Home/HomeScreen.dart';
+import 'package:shadow/views/Home/HomeScreen.dart';
 import 'package:shadow/views/register.dart';
 import 'Global/Settings/template.dart';
-import 'Views/Intro/introduction_animation_screen.dart';
 
 void main() {
   runApp(const MyApp());
